@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.containte {
+    z-index: 2;
+    min-height: 100vh;
+    background: linear-gradient(45deg, rgba(0, 46, 27, 0.5), rgba(255, 255, 255, 0));
+    position: absolute;
+    display: flex;
+    width: 100%;
+    /* height: calc(100vh - 140px); */
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.img-profile {
+    /* display: none; */
+    z-index: 4;
+    min-height: 100vh;
+    position: absolute;
+    right: 0vw;
+    opacity: 0.4;
+}
+
+.fullName {
+    display: block;
+    position: relative;
+    font-size: 35px;
+    letter-spacing: 5px;
+    color: white;
+}
+.fullName:after {
+    content: '|';
+    color: rgb(37, 36, 36);
+    animation: on-off alternate infinite 0.4s;
+}
+@keyframes on-off {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+/* SLIDE ARRIERE PLAN */
+.slider {
+    z-index: 1;
+}
+.slide {
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.slide1 {
+    background: url('../assets/img/perso/developper.jpg');
+    background-position: center;
+    background-size: cover;
+}
+.slide2 {
+    background: url('../assets/img/perso/webdesigner.webp');
+    background-position: center;
+    background-size: cover;
+}
+.slide3 {
+    background: url('../assets/img/perso/cybersecurity.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+footer a:hover{
+    color: #1abc9c;
+}
+
+.skills {
+    width: 45vw;
+    height: 55vh;
+}
