@@ -6,13 +6,14 @@
 .containte {
     z-index: 2;
     min-height: 100vh;
-    background: linear-gradient(45deg, rgba(0, 46, 27, 0.5), rgba(255, 255, 255, 0));
+    background: linear-gradient(45deg, rgba(0, 46, 27, 0.4), rgba(255, 255, 255, 0));
     position: absolute;
     display: flex;
     width: 100%;
     /* height: calc(100vh - 140px); */
     flex-direction: column;
     justify-content: space-evenly;
+    overflow: hidden;
 }
 .img-profile {
     /* display: none; */
@@ -20,9 +21,38 @@
     min-height: 100vh;
     position: absolute;
     right: 0vw;
-    opacity: 0.4;
+    opacity: 1;
+    animation: go-left 4s;
 }
+@keyframes go-left {
+    0%{
+        margin-right: -25vw;
+        opacity: 0;
+    }
+    100%{
+        margin-right: 0vw;
+        opacity: 1;
 
+    }
+}
+.imagedeprofile {
+    display: none;
+    width: 5vw;
+    height: 4vh;
+}
+@media screen and (max-width: 450px) {
+    .imagedeprofile {
+        display: block;
+        width: 12vw;
+        height: 5vh;
+    }
+    .img-profile {
+        display: none;
+    }
+    .btn-outline-light {
+        width: 30vw !important;
+    }
+}
 .fullName {
     display: block;
     position: relative;
@@ -30,7 +60,7 @@
     letter-spacing: 5px;
     color: white;
 }
-.fullName:after {
+.fullName::after {
     content: '|';
     color: rgb(37, 36, 36);
     animation: on-off alternate infinite 0.4s;
